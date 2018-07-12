@@ -1,0 +1,117 @@
+/* Анимация появления и изчезновения блока */
+.container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.popup-show {
+    top: 50%;
+    opacity: 1;
+    animation: show .5s ease;
+}
+.popup-hidden {
+    top: -500px;
+    opacity: 0;
+    animation: hide .5s ease;
+}
+@keyframes show {
+    0% {
+        top: -500px;
+        opacity: 0;
+    }
+    70% {
+        top: 40%;
+    }
+    100% {
+        top: 50%;
+        opacity: 1;
+    }
+}
+@keyframes hide {
+    0% {
+        top: 50%;
+        opacity: 1;
+    }
+    100% {
+        top: -500px;
+        opacity: 0;
+    }
+}
+/* Стилизация блока */
+.container {
+    width: 250px;
+    background: #ECE9E6;
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+    border: 2px solid white;
+    box-shadow: 0px 0px 14px .3px black;
+}
+.input-author, .input-quote {
+    display: block;
+    margin: auto;
+    outline: none;
+    border: none;
+    height: 22px;
+    background-color: inherit;
+    border-left: 0.1px solid #1b1c1d;
+    border-bottom: .1px solid #1b1c1d;
+    font-size: 18px;
+    text-indent: 3px;
+    font-family: Arial;
+    font-weight: 400;
+    &::placeholder {
+        text-indent: 3px;
+        font-family: Arial;
+        font-weight: 400;
+        transition: 1s;
+    }
+    &:invalid {
+        border-left: 0.1px solid #c40000;
+        border-bottom: .1px solid #c40000;
+        &:before{
+            content: 'false';
+        }
+    }
+    &:valid {
+        border-left: 0.1px solid #096f00;
+        border-bottom: .1px solid #096f00; 
+    }
+}
+.input-author {
+    margin-top: 8px;
+    width: 220px;
+}
+.input-quote {
+    margin-top: 8px;
+    width: 220px;
+    resize: none;
+    &:required:invalid {
+        border-left: 0.1px solid #c40000;
+        border-bottom: .1px solid #c40000;
+    }
+    &:required:valid {
+        border-left: 0.1px solid #096f00;
+        border-bottom: .1px solid #096f00; 
+    }
+}
+.add-btn {
+    outline: none;
+    float: right;
+    margin: 8px 10px 8px 0;
+    width: 80px;
+    height: 30px;
+    border: none;
+    background-color:#1b1c1d;
+    color: #ECE9E6;
+    font-size: 18px;
+    font-weight: 500;
+    span {
+        text-decoration: underline;
+    }
+    cursor: pointer;
+    &:hover {
+        margin: 7.5px 10.5px 8.5px 0;
+        box-shadow: .4px .4px 2px .1px black;
+    }
+}

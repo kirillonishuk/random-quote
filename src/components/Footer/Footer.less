@@ -1,0 +1,39 @@
+.site-footer {
+    position: absolute;
+    padding-top: 40px;
+    padding-bottom: 10px;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+}
+
+.container {
+    text-align: center;
+    margin-right: 25px;
+    font-size: 15px;
+}
+.footer-content {
+    user-select: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 550;
+    color: rgb(177, 177, 177);
+    &:before {
+        margin-right: 3px;
+        content: '\00A9';
+    }
+    a {
+        text-decoration: none;
+        color: inherit;
+        color: #ECE9E6;
+        &:hover {
+            color: rgb(177, 177, 177);
+        }
+    }
+    a:before {
+        content: ' ';
+    }
+    a:after {
+        content: ' ';
+    }
+}

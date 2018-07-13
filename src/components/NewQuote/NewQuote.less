@@ -5,15 +5,19 @@
     top: 50%;
     transform: translate(-50%,-50%);
 }
+.popup-default {
+    opacity: 0;
+    top: -500px;
+}
 .popup-show {
     top: 50%;
     opacity: 1;
-    animation: show .5s ease;
+    animation: show .7s ease;
 }
 .popup-hidden {
     top: -500px;
     opacity: 0;
-    animation: hide .5s ease;
+    animation: hide .7s ease;
 }
 @keyframes show {
     0% {
@@ -21,7 +25,7 @@
         opacity: 0;
     }
     70% {
-        top: 40%;
+        top: 55%;
     }
     100% {
         top: 50%;
@@ -33,9 +37,17 @@
         top: 50%;
         opacity: 1;
     }
+    50% {
+        top: 50%;
+        right: 40%;
+        transform: rotate(90deg);
+        opacity: 1;
+    }
     100% {
-        top: -500px;
+        top: 120%;
+        right: 40%;
         opacity: 0;
+        transform: rotate(90deg);
     }
 }
 /* Стилизация блока */
@@ -93,6 +105,27 @@
     &:required:valid {
         border-left: 0.1px solid #096f00;
         border-bottom: .1px solid #096f00; 
+    }
+
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+    &::-webkit-scrollbar-button {
+        height: 2px;
+    }
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: inherit;
+    }
+     
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: #888; 
+    }
+    
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: #555; 
     }
 }
 .add-btn {

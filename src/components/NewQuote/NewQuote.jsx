@@ -28,9 +28,8 @@ class NewQuote extends Component {
         });
     }
     render() {
-        let popupState = this.props.isHidden ? 'popup-show' : 'popup-hidden';
         return (
-            <article styleName={`container ${popupState}`}>
+            <article styleName={`container ${this.props.newQuoteStatus}`}>
                 <form onSubmit={this.handleSubmit}>
                     <input
                         placeholder='Enter Author'
@@ -59,11 +58,11 @@ class NewQuote extends Component {
 }
 
 NewQuote.defaultProps = {
-    isHidden: false,
+    newQuoteStatus: 'popup-default',
 };
 
 NewQuote.propTypes = {
-    isHidden: PropTypes.bool,
+    newQuoteStatus: PropTypes.string,
 };
 
 export default CSSModules(NewQuote, styles, {

@@ -10,9 +10,9 @@ const Footer = () => (
                 Created and maintained by 
                 <a
                     target='_blank'
-                    href='https://vk.com/id125347024'
+                    href='https://github.com/kirillonishuk'
                 >
-                    Kiryl Anishchuk 
+                    {` Kiryl Anishchuk `} 
                 </a> 
                  aka Inq. Belarus, Brest, 2018. 
             </span>

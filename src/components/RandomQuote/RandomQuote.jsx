@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import CSSModules from 'react-css-modules';
 import styles from './RandomQuote.less';
@@ -20,8 +21,12 @@ class RandomQuote extends Component {
                     Random Qo<span>ute!</span>
                 </h3>
                 <article styleName='quote'>
-                    <h5 styleName='quote-author'>- Albert Einstein</h5>
-                    <p styleName='quote-content'>Few are those who see with their own eyes and feel with their own hearts.</p>
+                    <h5 styleName='quote-author'>
+                        {`- ${this.props.author}`}
+                    </h5>
+                    <p styleName='quote-content'>
+                        {this.props.quote}
+                    </p>
                     <article styleName='marks-container'>
                         <div styleName='single-vote'>
                             <span styleName='result'>
@@ -44,6 +49,15 @@ class RandomQuote extends Component {
         );
     }
 }
+
+RandomQuote.defaultProps = {
+    author: 'Anonymous',
+};
+
+RandomQuote.propTypes = {
+    author: PropTypes.string,
+    quote: PropTypes.string.isRequired,
+};
 
 export default CSSModules(RandomQuote, styles, {
     allowMultiple: true
